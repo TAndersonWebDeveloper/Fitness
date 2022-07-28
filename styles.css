@@ -158,6 +158,11 @@ body {
   color: white;
 }
 
+.show {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
 /*  ***************************HEADER*********************************  */
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.664)),
@@ -166,11 +171,7 @@ body {
   background-size: cover;
   background-position: center;
   color: white;
-  clip-path: polygon(0 0, 100% 0, 100% 76%, 0% 100%);
-}
-
-.header-container {
-  filter: drop-shadow(0 0 1rem rgb(0, 0, 0));
+  /* clip-path: polygon(0 0, 100% 0, 100% 76%, 0% 100%); */
 }
 
 .header-logo {
@@ -204,17 +205,26 @@ body {
   font-size: 6.4rem;
   margin-bottom: 0.5rem;
   font-weight: 100;
+  animation-name: fromRight;
+  animation-duration: 2s;
 }
 
 .hero-text {
   font-size: 2.8rem;
   margin-bottom: 3rem;
   font-weight: 100;
+  animation-name: fromLeft;
+  animation-duration: 2s;
 }
 
 .hero {
   margin-top: 15%;
   margin-left: 5%;
+}
+
+.hero .signup-btn {
+  animation-name: fromBottom;
+  animation-duration: 2s;
 }
 
 .hero-icon {
@@ -229,21 +239,135 @@ body {
   animation-iteration-count: infinite;
 }
 
-@keyframes bounce {
+@keyframes fromRight {
   0% {
-    transform: translateY(0);
+    opacity: 0;
+    transform: translateX(20px);
   }
+
   100% {
-    transform: translateY(-30px);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
+@keyframes fromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    transform: scale(1);
+  }
+}
+
+/* *********************ABOUT*************************************** */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  background-color: var(--brand-color);
+  justify-content: center;
+  align-items: center;
+}
+
+.about h2 {
+  margin: 4rem 0;
+  font-size: 5rem;
+  text-align: center;
+  color: #444;
+  font-weight: 100;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: 2s;
+}
+
+.about h2 span {
+  color: var(--brand-color);
+}
+
+.about h3 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+  color: #444;
+}
+
+.about-text {
+  margin: 4rem 2rem;
+  padding: 3rem 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #666;
+  line-height: 1.4rem;
+  letter-spacing: 1px;
+  border-radius: 10px;
+}
+
+.about-img img {
+  width: 500px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 30%,
+    86% 50%,
+    100% 70%,
+    100% 100%,
+    0 100%,
+    0% 30%
+  );
+  padding: 2rem 0;
+}
+
+.about-item-list {
+  display: flex;
+  margin: 0 2.5%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 1rem;
+  flex-grow: 1;
+}
+
+.about-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin: 2rem 2rem;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: 2s;
+}
+
+.about ion-icon {
+  font-size: 4rem;
+  margin: 0 4rem;
+  color: var(--brand-color);
+}
+
 /* *****************OFFERED CLASSES************************* */
 
 .classes-header {
   font-size: 4rem;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.404);
-  margin-top: 2rem;
   padding-top: 2rem;
 }
 
