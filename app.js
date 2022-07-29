@@ -24,6 +24,7 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       entry.target.classList.toggle("show", entry.isIntersecting);
+      console.log(entry);
     });
   },
   {
@@ -76,18 +77,43 @@ modalSignupBtn.addEventListener("click", (e) => {
   }
 });
 const checkWeatherBtn = document.querySelector(".check-weather-btn");
+const currentTemp = document.querySelector(".current-temp");
 const highTempOutput = document.querySelector(".temp-high");
+const lowTempOutput = document.querySelector(".temp-low");
+const weatherConditions = document.querySelector(".weather-conditions");
+const windSpeed = document.querySelector(".wind-speed");
+const weatherModal = document.querySelector(".weather-modal");
+const weatherModalHeader = document.querySelector(".weather-modal h3");
+const weatherHeader = document.querySelector(".weather-header");
+const weatherText = document.querySelector(".weather-text");
+const weatherIcon = document.querySelector(".weather-modal img");
+const weatherModalCloseBtn = document.querySelector(".close-weather-modal");
+observer.observe(checkWeatherBtn);
+observer.observe(weatherText);
+observer.observe(weatherHeader);
 let apiKey = "c50fe6a08da5a2fb3b65643955014b1d";
 let imgUrlStart = "http://openweathermap.org/img/wn/";
 let lat;
 let long;
 let endpoint;
+
 async function getWeather(lat, long) {
   let object = await fetch(endpoint);
+  console.log(endpoint);
   let response = await object.json().then((response) => {
-    highTempOutput.innerHTML = `High: ${response.main.temp_max}`;
+    weatherModalHeader.innerHTML = `<span class='weather-modal-header-span'>Current Weather</span><br> ${response.name}`;
+    weatherIcon.src = `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
+    currentTemp.innerHTML = `Current temp: ${Math.floor(response.main.temp)}`;
+    highTempOutput.innerHTML = `High: ${Math.floor(response.main.temp_max)}`;
+    lowTempOutput.innerHTML = `Low: ${Math.floor(response.main.temp_min)}`;
+    weatherConditions.innerHTML = `Current Conditions: ${response.weather[0].description}`;
+    windSpeed.innerHTML = `Wind Speed: ${response.wind.speed} MPH`;
   });
 }
+
+weatherModalCloseBtn.addEventListener("click", () => {
+  weatherModal.classList.add("hide");
+});
 
 checkWeatherBtn.addEventListener("click", (e) => {
   e.preventDefault();
@@ -98,5 +124,6 @@ checkWeatherBtn.addEventListener("click", (e) => {
     endpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&appid=${apiKey}`;
     console.log(lat);
     getWeather();
+    weatherModal.classList.remove("hide");
   }
 });

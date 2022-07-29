@@ -159,21 +159,37 @@
         </section>
 
         <section class="weather">
-            <h2>Headed to the Gym?</h2>
-            <p>Check the weather before you go! Some outdoor classes may be cancelled depending on weather conditions.
-            </p>
-            <button class="check-weather-btn">Check Weather</button>
+            <div>
+                <h2 class="weather-header">Headed to the Gym?</h2>
+            </div>
+            <div>
+                <p class="weather-text">Check the weather before you go! Some outdoor classes may be cancelled depending
+                    on weather
+                    conditions.
+                </p>
+                <button class="check-weather-btn">Check Weather</button>
+            </div>
         </section>
-        <aside class="weather-modal">
-            <h3>Local Weather</h3>
-            <p class="temp-low"></p>
-            <p class="temp-high"></p>
-            <p class="weather-conditions"></p>
+        <section class="trainers">
+            <div>Trainers</div>
+        </section>
+
+        <aside class="weather-modal hide">
+            <ion-icon name="close-circle-outline" class="close-weather-modal"></ion-icon>
+            <h3></h3>
+            <img src="" alt="">
+            <div>
+                <p class="current-temp"></p>
+                <p class="temp-high"></p>
+                <p class="temp-low"></p>
+                <p class="weather-conditions"></p>
+                <p class="wind-speed"></p>
+            </div>
         </aside>
 
         <aside class="modal hide">
             <ion-icon name="close-circle-outline" class="close-modal"></ion-icon>
-            <img src="/img/Ajax Fitness-1.png" alt="">
+            <img src="/img/Ajax Fitness-1 (2).png" alt="">
             <h2>Start your 7-day trial!</h2>
             <form class="signup-form" action="">
                 <input type="text" name="" id="name" placeholder="Name">
