@@ -25,8 +25,11 @@
                     <li>
                         <a href="#">Testimonials</a>
                     </li>
-
+                    <li>
+                        <span class="welcome-back"></span>
+                    </li>
                 </ul>
+
                 <button class="signup-btn">Sign Up</button>
             </nav>
             <section class="hero">
@@ -154,6 +157,20 @@
                 <ion-icon name="chevron-forward-outline" class="arrow_next"></ion-icon>
             </div>
         </section>
+
+        <section class="weather">
+            <h2>Headed to the Gym?</h2>
+            <p>Check the weather before you go! Some outdoor classes may be cancelled depending on weather conditions.
+            </p>
+            <button class="check-weather-btn">Check Weather</button>
+        </section>
+        <aside class="weather-modal">
+            <h3>Local Weather</h3>
+            <p class="temp-low"></p>
+            <p class="temp-high"></p>
+            <p class="weather-conditions"></p>
+        </aside>
+
         <aside class="modal hide">
             <ion-icon name="close-circle-outline" class="close-modal"></ion-icon>
             <img src="/img/Ajax Fitness-1.png" alt="">
@@ -164,7 +181,12 @@
                 <input type="phone" name="" id="" placeholder="Phone Number">
                 <button class="signup-btn modal-signup-btn">Submit</button>
             </form>
-
+            <div class="hide confirmation-msg">
+                <h3>Great Work!</h3>
+                <ion-icon name="thumbs-up-outline" class="thumb"></ion-icon>
+                <p>You just took the first step to a healthier you!</p>
+                <p>We'll reach out shortly with how to redeem your trial!</p>
+            </div>
         </aside>
     </main>
 
