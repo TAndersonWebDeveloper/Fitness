@@ -138,6 +138,10 @@ table {
   --brand-color: #5aff15;
 }
 /* *********SHARED AND UTILITY CLASSES************************ */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   background-color: #00b712;
@@ -163,6 +167,10 @@ body {
   transform: translateX(0) !important;
 }
 
+.hide {
+  visibility: hidden;
+}
+
 /*  ***************************HEADER*********************************  */
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.664)),
@@ -176,6 +184,36 @@ body {
 
 .header-logo {
   width: 100px;
+}
+
+.header-logo:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
 .navbar {
@@ -363,6 +401,7 @@ body {
   margin: 0 4rem;
   color: var(--brand-color);
 }
+/* **********************TESTIMONIALS****************************** */
 
 /* *****************OFFERED CLASSES************************* */
 
@@ -477,4 +516,72 @@ body {
 }
 .arrow_next:hover {
   font-size: 2.2rem;
+}
+
+.modal {
+  position: fixed;
+  width: 700px;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  background-color: #00b712e7;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 10px;
+}
+
+.modal h2 {
+  color: white;
+  font-size: 4rem;
+  margin-bottom: 4rem;
+}
+
+.modal img {
+  width: 200px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup-form input {
+  width: 500px;
+  background: rgba(68, 68, 68, 0.555);
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  margin: 1rem 0;
+  color: white;
+  border: 1px solid var(--brand-color);
+}
+
+.signup-form input::placeholder {
+  color: white;
+}
+
+.signup-form button {
+  max-width: 200px;
+  background: transparent;
+  color: white;
+  margin-top: 2.5rem;
+  transition: all 250ms;
+}
+.signup-form button:hover {
+  background-color: white;
+  transition: all 250ms;
+  color: #00b712;
+}
+
+.close-modal {
+  align-self: flex-end;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
 }
