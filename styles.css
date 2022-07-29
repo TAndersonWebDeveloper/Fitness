@@ -169,6 +169,7 @@ body {
 
 .hide {
   visibility: hidden;
+  opacity: 0;
 }
 
 /*  ***************************HEADER*********************************  */
@@ -524,13 +525,14 @@ body {
   left: 50%;
   top: 10%;
   transform: translateX(-50%);
-  background-color: #00b712e7;
+  background-color: #00b712;
   height: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   border-radius: 10px;
+  opacity: 1;
 }
 
 .modal h2 {
@@ -569,11 +571,9 @@ body {
   background: transparent;
   color: white;
   margin-top: 2.5rem;
-  transition: all 250ms;
 }
 .signup-form button:hover {
   background-color: white;
-  transition: all 250ms;
   color: #00b712;
 }
 
@@ -581,7 +581,7 @@ body {
   align-self: flex-end;
   margin-right: 1rem;
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 3rem;
   color: white;
   cursor: pointer;
 }
