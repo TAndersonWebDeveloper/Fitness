@@ -414,6 +414,7 @@ body {
 
 .classes-header {
   font-size: 5rem;
+  font-weight: 100;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.404);
   padding: 5rem 0;
@@ -515,14 +516,14 @@ body {
   transition: all 200ms;
 }
 .arrow_prev:hover {
-  font-size: 2.2rem;
+  color: #ccc;
 }
 .arrow_next {
   margin-right: 1rem;
   transition: all 200ms;
 }
 .arrow_next:hover {
-  font-size: 2.2rem;
+  color: #ccc;
 }
 
 .modal {
@@ -741,7 +742,116 @@ body {
 }
 
 .trainers {
-  height: 1000px;
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.trainers-header {
+  font-size: 5rem;
+  font-weight: 100;
+  color: white;
+  text-align: center;
+  padding-bottom: 3rem;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 1s;
+}
+
+.trainer-tab-list {
+  background-color: #43434354;
+  padding: 1rem;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.trainer-tab-list li {
+  margin-bottom: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem 0;
+  transition: all 500ms;
+}
+
+.trainer-tab-list li:hover {
+  transform: translateY(-3px);
+  transition: all 500ms;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.trainer-tab-list li:last-of-type {
+  margin-bottom: 0;
+}
+
+.trainer-tab-list li a {
+  text-decoration: none;
+  color: #00b712;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.tabs-container {
+  filter: drop-shadow(18px -21px 0px var(--brand-color));
+}
+
+.trainer-tab {
+  display: flex;
+  height: 600px;
+  align-items: center;
+  margin-left: 22%;
+  margin-right: 10%;
+  background-color: white;
+  clip-path: polygon(0 0, 97% 4%, 100% 100%, 0% 100%);
+
+  border-radius: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.trainer-img {
+  height: 100%;
+  width: 400px;
+  border-radius: 10px;
+  clip-path: polygon(85% 0, 100% 50%, 85% 100%, 0% 100%, 0 51%, 0% 0%);
+}
+
+.trainer-text {
+  width: 600px;
+  margin: 0 10%;
+}
+
+.trainer-text p {
+  line-height: 2rem;
+}
+
+.trainer-text h3 {
+  font-size: 3rem;
+  color: var(--brand-color);
+  margin-bottom: 2rem;
+}
+
+.testimonials-container {
+  filter: drop-shadow(10px -21px 30px var(--brand-color));
+}
+
+.testimonials {
+  clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
+  background-color: white;
+  height: 500px;
+}
+
+.testimonials-header {
+  font-weight: 100;
+  font-size: 4rem;
+  text-align: center;
+  padding-top: 5rem;
+  color: #00b712;
 }
 
 @keyframes rotation {
@@ -751,4 +861,12 @@ body {
   to {
     transform: rotate(359deg);
   }
+}
+@media (max-width: 1200px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 500px) {
 }

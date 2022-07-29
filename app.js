@@ -127,3 +127,10 @@ checkWeatherBtn.addEventListener("click", (e) => {
     weatherModal.classList.remove("hide");
   }
 });
+
+$(function () {
+  $("#tabs").tabs();
+});
+
+const trainersHeader = document.querySelector(".trainers-header");
+observer.observe(trainersHeader);
