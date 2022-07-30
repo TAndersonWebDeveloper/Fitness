@@ -134,3 +134,56 @@ $(function () {
 
 const trainersHeader = document.querySelector(".trainers-header");
 observer.observe(trainersHeader);
+
+const testimonialHeader = document.querySelector(".testimonials-header");
+observer.observe(testimonialHeader);
+
+const card = document.querySelectorAll(".card");
+card.forEach((card) => {
+  observer.observe(card);
+});
+
+const classScheduleModal = document.querySelector(".class-modal");
+//boxing
+const boxingInstuctorOutput = document.querySelector(".boxing-instructor");
+const boxingTimesOutput = document.querySelector(".boxing-times");
+//weightlifting
+const weightLiftingTimesOutput = document.querySelector(".weightlifting-times");
+const weightLiftingInstuctorOutput = document.querySelector(
+  ".weightlifting-instructor"
+);
+//Yoga
+const yogaTimesOutput = document.querySelector(".yoga-times");
+const yogaInstuctorOutput = document.querySelector(".yoga-instructor");
+
+const learnMoreBtn = document.querySelectorAll(".class-btn");
+console.log(learnMoreBtn);
+
+for (i = 0; i < learnMoreBtn.length; i++) {
+  learnMoreBtn[i].addEventListener("click", () => {
+    fetch("./classes.json")
+      .then((response) => {
+        return response.json();
+        console.log(response);
+      })
+      .then((data) => {
+        classScheduleModal.classList.remove("hide");
+        console.log(data[1].Yoga.className);
+        //boxing
+        boxingInstuctorOutput.innerHTML = `Instructor : ${data[0].Boxing.instructor}`;
+        boxingTimesOutput.innerHTML = `Class Times : ${data[0].Boxing.classTimes}`;
+        //yoga
+        yogaInstuctorOutput.innerHTML = `Instructor : ${data[1].Yoga.instructor}`;
+        yogaTimesOutput.innerHTML = `Class Times : ${data[1].Yoga.classTimes}`;
+        //weightlifting
+        weightLiftingInstuctorOutput.innerHTML = `Instructor : ${data[2].Weightlifting.instructor}`;
+        weightLiftingTimesOutput.innerHTML = `Class Times : ${data[2].Weightlifting.classTimes}`;
+      });
+  });
+}
+
+const closeClassModalBtn = document.querySelector(".close-class-modal");
+
+closeClassModalBtn.addEventListener("click", () => {
+  classScheduleModal.classList.add("hide");
+});

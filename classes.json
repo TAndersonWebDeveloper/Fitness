@@ -1,0 +1,23 @@
+[
+  {
+    "Boxing": {
+      "className": "Boxing",
+      "instructor": "Dominic Thompson",
+      "classTimes": "6PM Monday, Wednesday, Friday"
+    }
+  },
+  {
+    "Yoga": {
+      "className": "Yoga",
+      "instructor": "Jessica Vrieze",
+      "classTimes": "4PM Tuesday, Thursday"
+    }
+  },
+  {
+    "Weightlifting": {
+      "className": "Weightlifting",
+      "instructor": "Dylon Anderson",
+      "classTimes": "8AM Monday, Tuesday, Thursday, Friday"
+    }
+  }
+]

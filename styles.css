@@ -526,6 +526,58 @@ body {
   color: #ccc;
 }
 
+.class-modal {
+  background-color: rgba(34, 34, 34, 0.925);
+  color: white;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5rem;
+  z-index: 99;
+  width: 60%;
+  transition: all 500ms;
+}
+
+.class-modal-heading {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  border-bottom: 1px solid #00b712;
+}
+
+.class-container {
+  display: flex;
+  position: relative;
+}
+
+.class-heading {
+  font-size: 2rem;
+  color: #00b712;
+  margin-bottom: 1rem;
+}
+
+.class-content {
+  border-right: 1px solid #00b712;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.class-content:last-of-type {
+  border: none;
+}
+
+.class-content p {
+  line-height: 2rem;
+}
+
+.close-class-modal {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
 .modal {
   position: fixed;
   width: 700px;
@@ -562,7 +614,7 @@ body {
 }
 
 .modal h2 {
-  color: white;
+  color: #00b712;
   font-size: 4rem;
   margin-bottom: 4rem;
 }
@@ -842,8 +894,9 @@ body {
 
 .testimonials {
   clip-path: polygon(50% 10%, 100% 0, 100% 100%, 0 100%, 0 0);
-  background-color: white;
-  height: 500px;
+  background-color: #fff;
+  height: 650px;
+  position: relative;
 }
 
 .testimonials-header {
@@ -852,6 +905,67 @@ body {
   text-align: center;
   padding-top: 5rem;
   color: #00b712;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: all 2s;
+}
+
+.cards-container {
+  display: flex;
+  margin: 0 10%;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  width: 20%;
+  height: 350px;
+  margin-right: 4rem;
+  padding: 0 2rem;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 2s;
+}
+
+.card-img {
+  width: 100px;
+  height: 100px;
+  padding-top: 1rem;
+  border-radius: 100%;
+  margin-bottom: 2rem;
+}
+
+.card-text {
+  border-top: 1px solid #00b712;
+  padding-top: 1rem;
+  line-height: 2rem;
+  letter-spacing: 1px;
+}
+
+.quote {
+  color: #00b712;
+  font-size: 3rem;
+}
+
+.left-quote {
+  width: 100px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  fill: #00b712;
+}
+
+.right-quote {
+  width: 100px;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  fill: #00b712;
 }
 
 @keyframes rotation {
