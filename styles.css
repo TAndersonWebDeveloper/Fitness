@@ -1047,10 +1047,11 @@ footer div {
   }
 
   .header {
-    height: 50vh;
+    height: 100vh;
   }
   .hero-heading {
     font-size: 5rem;
+    margin-top: 15rem;
     margin-bottom: 1rem;
   }
   .hero-text {
@@ -1065,12 +1066,21 @@ footer div {
     display: inline-block;
   }
 
-  .hide {
-    opacity: 1 !important;
+  .about-text {
+    width: 92vw;
   }
 
-  .about-text {
-    width: 100vw;
+  .about-text h2 {
+    transform: translateX(-20px) translateY(-20px) !important;
+    font-size: 3.5rem;
+    margin: 1rem;
+    margin-top: 3rem;
+  }
+
+  .about-item {
+    transform: translateX(-20px) !important;
+    margin: 1rem;
+    transition: all 1s;
   }
 
   .about-img img {
@@ -1078,7 +1088,7 @@ footer div {
   }
 
   .items {
-    height: 500px;
+    height: 600px;
   }
 
   .item {
@@ -1111,8 +1121,8 @@ footer div {
     top: 5%;
     background-color: #0000008f;
     background-image: linear-gradient(147deg, #434343 0%, #000000ab 74%);
-    transform: translateX(200px);
-    height: 500px;
+    height: 400px;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
