@@ -185,6 +185,7 @@ body {
 }
 
 .hide {
+  display: none;
   visibility: hidden;
   opacity: 0 !important;
   transition: all 250ms;
