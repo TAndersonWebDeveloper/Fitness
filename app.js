@@ -24,7 +24,6 @@ const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       entry.target.classList.toggle("show", entry.isIntersecting);
-      console.log(entry);
     });
   },
   {
@@ -99,7 +98,7 @@ let endpoint;
 
 async function getWeather(lat, long) {
   let object = await fetch(endpoint);
-  console.log(endpoint);
+
   let response = await object.json().then((response) => {
     weatherModalHeader.innerHTML = `<span class='weather-modal-header-span'>Current Weather</span><br> ${response.name}`;
     weatherIcon.src = `http://openweathermap.org/img/wn/${response.weather[0].icon}@2x.png`;
@@ -122,7 +121,7 @@ checkWeatherBtn.addEventListener("click", (e) => {
     lat = await location.coords.latitude;
     long = await location.coords.longitude;
     endpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&appid=${apiKey}`;
-    console.log(lat);
+
     getWeather();
     weatherModal.classList.remove("hide");
   }
@@ -157,18 +156,16 @@ const yogaTimesOutput = document.querySelector(".yoga-times");
 const yogaInstuctorOutput = document.querySelector(".yoga-instructor");
 
 const learnMoreBtn = document.querySelectorAll(".class-btn");
-console.log(learnMoreBtn);
 
 for (i = 0; i < learnMoreBtn.length; i++) {
   learnMoreBtn[i].addEventListener("click", () => {
     fetch("./classes.json")
       .then((response) => {
         return response.json();
-        console.log(response);
       })
       .then((data) => {
         classScheduleModal.classList.remove("hide");
-        console.log(data[1].Yoga.className);
+
         //boxing
         boxingInstuctorOutput.innerHTML = `Instructor : ${data[0].Boxing.instructor}`;
         boxingTimesOutput.innerHTML = `Class Times : ${data[0].Boxing.classTimes}`;

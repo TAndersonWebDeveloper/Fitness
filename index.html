@@ -8,14 +8,14 @@
     <title>Ajax Gym</title>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="styles.css">
-
+    <script defer src="app.js"></script>
 </head>
 
 <body>
     <div class="header-container">
         <header class="header">
             <nav class="navbar">
-                <img src="img/Ajax Fitness-1 (2).png" alt="" class="header-logo">
+                <img src="img/AjaxFitness-1(2).png" alt="" class="header-logo">
                 <ul class="nav-list">
                     <li>
                         <a href="#about">About Us</a>
@@ -236,7 +236,7 @@
                     </div>
                 </div>
             </div>
-            <img src="" alt="" class="trainer-img-right">
+
         </section>
 
         <div class="testimonials-container">
@@ -295,6 +295,7 @@
 
         <aside class="weather-modal hide">
             <ion-icon name="close-circle-outline" class="close-weather-modal"></ion-icon>
+            <!-- API will fill in info -->
             <h3></h3>
             <img src="" alt="">
             <div>
@@ -308,12 +309,12 @@
 
         <aside class="modal hide ">
             <ion-icon name="close-circle-outline" class="close-modal"></ion-icon>
-            <img src="/img/Ajax Fitness-1 (2).png" alt="">
+            <img src="/img/AjaxFitness-1(2).png" alt="">
             <h2>Start your 7-day trial!</h2>
-            <form class="signup-form" action="">
-                <input type="text" name="" id="name" placeholder="Name">
-                <input type="email" name="" id="" placeholder="Email">
-                <input type="phone" name="" id="" placeholder="Phone Number">
+            <form class="signup-form" action="POST">
+                <input type="text" id="name" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="tel" placeholder="Phone Number">
                 <button class="signup-btn modal-signup-btn">Submit</button>
             </form>
             <div class="hide confirmation-msg">
@@ -327,14 +328,14 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="#"><img src="img/Ajax Fitness-1 (2).png" alt=""></a></li>
-                <div>
-                    <li><a class="footer-link" href="#">Back to Top</a></li>
-                    <li><a class="footer-link" href="#about">About Us</a></li>
-                    <li><a class="footer-link" href="#classes">Featured Classes</a></li>
-                    <li><a class="footer-link" href="#trainers">Trainers</a></li>
-                    <li><a class="footer-link" href="#testimonials">Client Testimonials</a></li>
-                </div>
+                <li><a href="#"><img src="img/AjaxFitness-1(2).png" alt=""></a></li>
+
+                <li class="back-to-top"><a class="footer-link" href="#">Back to Top</a></li>
+                <li><a class="footer-link" href="#about">About Us</a></li>
+                <li><a class="footer-link" href="#classes">Featured Classes</a></li>
+                <li><a class="footer-link" href="#trainers">Trainers</a></li>
+                <li><a class="footer-link" href="#testimonials">Client Testimonials</a></li>
+
             </ul>
         </nav>
         <p class="footer-text">THIS SITE FOR EDUCATIONAL PURPOSES ONLY</p>
@@ -351,9 +352,9 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"
         integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
     <!-- Slick Carousel -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- Custom JS file -->
-    <script defer src="app.js"></script>
+
 </body>
 
 </html>

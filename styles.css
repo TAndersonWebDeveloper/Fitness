@@ -1022,9 +1022,14 @@ footer nav ul img {
   width: 100px;
 }
 
-footer div {
+footer section {
   display: flex;
+  justify-content: center;
   margin: 0 auto;
+}
+
+.back-to-top {
+  margin-left: 20%;
 }
 
 @keyframes rotation {
@@ -1035,12 +1040,19 @@ footer div {
     transform: rotate(359deg);
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   html {
-    font-size: 50%;
+    font-size: 80%;
+  }
+  .trainer-tab-list li a {
+    font-size: 1.7rem;
+  }
+  .testimonials-header {
+    margin-top: 1rem;
+    padding-top: 8rem;
   }
 }
-
+/* 
 @media (max-width: 500px) {
   html {
     overflow-x: hidden;
@@ -1181,4 +1193,4 @@ footer div {
   .trainer-tab-list li a {
     font-size: 0.8rem;
   }
-}
+} */
