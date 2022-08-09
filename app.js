@@ -1,3 +1,4 @@
+//Local Storage for when user signs up for free trial, will display welcome message when they return to the site
 let clientName;
 const welcomeBackMessage = document.querySelector(".welcome-back");
 if (localStorage.getItem("fName")) {
@@ -17,7 +18,7 @@ $(function () {
   });
 });
 
-//Intersection observers
+//Intersection observers and functionality for displaying item when user scrolls to it
 const aboutHeader = document.querySelector(".about h2");
 const aboutItem = document.querySelectorAll(".about-item");
 const observer = new IntersectionObserver(
@@ -30,14 +31,14 @@ const observer = new IntersectionObserver(
     threshold: 1,
   }
 );
-
+//Loop for each item to be observed
 aboutItem.forEach((item) => {
   observer.observe(item);
 });
 
 observer.observe(aboutHeader);
 
-//Modal functionality
+//Sign Up Modal functionality
 const signUpBtn = document.querySelectorAll(".signup-btn");
 const modal = document.querySelector(".modal");
 const closeModalBtn = document.querySelector(".close-modal");
@@ -75,6 +76,9 @@ modalSignupBtn.addEventListener("click", (e) => {
     }, 5000);
   }
 });
+
+//Weather modal section and modal functionality
+//Api will populate empty html sections
 const checkWeatherBtn = document.querySelector(".check-weather-btn");
 const currentTemp = document.querySelector(".current-temp");
 const highTempOutput = document.querySelector(".temp-high");
@@ -96,6 +100,7 @@ let lat;
 let long;
 let endpoint;
 
+//Get Weather reqest
 async function getWeather(lat, long) {
   let object = await fetch(endpoint);
 
@@ -131,6 +136,7 @@ $(function () {
   $("#tabs").tabs();
 });
 
+//jQuery Card plugin for trainers section
 const trainersHeader = document.querySelector(".trainers-header");
 observer.observe(trainersHeader);
 
@@ -142,6 +148,8 @@ card.forEach((card) => {
   observer.observe(card);
 });
 
+//Class Schedule modal
+//Info is populated from the included classes.json file to mimic information that may have been retrieved from a database
 const classScheduleModal = document.querySelector(".class-modal");
 //boxing
 const boxingInstuctorOutput = document.querySelector(".boxing-instructor");

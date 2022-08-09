@@ -1052,7 +1052,10 @@ footer section {
     padding-top: 8rem;
   }
 }
-/* 
+/*  
+
+Media Queries, work in progress
+
 @media (max-width: 500px) {
   html {
     overflow-x: hidden;
